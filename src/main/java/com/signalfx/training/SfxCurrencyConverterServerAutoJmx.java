@@ -19,6 +19,8 @@ public class SfxCurrencyConverterServerAutoJmx extends SfxCurrencyConverterServe
 	
 		if ( target.equals("/deadlock") ) {
 			DeadLockTest.createDeadlock();
+			response.setStatus(HttpServletResponse.SC_OK);
+			baseRequest.setHandled(true);
 		}else {
 			super.handle(target, baseRequest, request, response);
 		}
