@@ -4,12 +4,15 @@ signalFxAccessToken: {"#from": "/etc/signalfx/token"}
 ingestUrl: {"#from": "/etc/signalfx/ingest_url", default: "https://ingest.signalfx.com"}
 apiUrl: {"#from": "/etc/signalfx/api_url", default: "https://api.signalfx.com"}
 cluster: {"#from": "/etc/signalfx/cluster", optional: true}
-traceEndpointUrl: "https://ingest.us1.signalfx.com/v2/trace"
+
+# 1. Add traceEndpointUrl 
+traceEndpointUrl: "https://ingest.<YOUR_REALM>.signalfx.com/v2/trace"
+
 intervalSeconds: 10
 
 logging:
   # Valid values are 'debug', 'info', 'warning', and 'error'
-  level: debug
+  level: info
 
 # observers are what discover running services in the environment
 observers:
@@ -31,8 +34,8 @@ monitors:
     defaultSpanTags:
       environment: TestEnv
   - type: collectd/genericjmx
-    host: 192.168.0.122
-    port: 1099
+    host: <JMX_HOST>
+    port: <JMX_PORT> # NOT RMI port, Remote JMX Port
     mBeanDefinitions:
       threading:
         objectName: java.lang:type=Threading
@@ -42,8 +45,8 @@ monitors:
           instancePrefix: jvm.threads.count
           attribute: ThreadCount
   - type: jmx
-    host: 192.168.0.122
-    port: 1099 # NOT RMI port, Remote JMX Port
+    host: <JMX_HOST>
+    port: <JMX_PORT> # NOT RMI port, Remote JMX Port
     groovyScript: {"#from": "/etc/signalfx/deadlockedThreads.groovy", raw: true}
 
 
