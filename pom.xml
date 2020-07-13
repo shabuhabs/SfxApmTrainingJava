@@ -58,6 +58,14 @@
 	    <version>0.33.0</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/io.opentracing/opentracing-util -->
+<dependency>
+    <groupId>io.opentracing</groupId>
+    <artifactId>opentracing-util</artifactId>
+    <version>0.33.0</version>
+</dependency>
+	
+	
 <dependency>
     <groupId>com.signalfx.public</groupId>
     <artifactId>signalfx-java</artifactId>
@@ -66,7 +74,7 @@
 <dependency>
     <groupId>com.signalfx.public</groupId>
     <artifactId>signalfx-trace-api</artifactId>
-    <version>0.36.0-sfx4</version>
+    <version>0.48.0-sfx0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/io.jaegertracing/jaeger-client
@@ -78,7 +86,7 @@
 -->
 
 <!-- https://mvnrepository.com/artifact/io.jaegertracing/jaeger-zipkin -->
-<dependency>
+<!-- <dependency>
     <groupId>io.jaegertracing</groupId>
     <artifactId>jaeger-zipkin</artifactId>
     <version>1.2.0</version>
@@ -93,5 +101,7 @@
       <artifactId>zipkin-sender-okhttp3</artifactId>
       <version>2.6.0</version>
         </dependency>
+  -->
   </dependencies>
+  
 </project>
