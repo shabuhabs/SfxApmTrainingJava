@@ -31,19 +31,17 @@
         </executions>
 	<configuration>
 		<executable>java</executable>
-		<!--<includePluginDependencies>true</includePluginDependencies>-->
-		<!-- <mainClass>com.signalfx.training.SfxCurrencyConverterServerAutoJmx</mainClass> -->
 		<arguments>		
-                        <argument>-javaagent:./signalfx-tracing.jar</argument>
-			                    <argument>-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</argument>
-					                      <argument>-Dsignalfx.service.name=TheNewJavaService</argument>
+         	<argument>-javaagent:./signalfx-tracing.jar</argument>
+	     	<argument>-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</argument>
+			<argument>-Dsignalfx.service.name=TheNewJavaService</argument>
 
 			<argument>-classpath</argument>
 			                        <classpath/>
 
 			<argument>com.signalfx.training.SfxCurrencyConverterServerAutoJmx</argument>	
 			
-         		</arguments>
+        </arguments>
 		<!--           <systemProperties>
         	<systemProperty>
               	  <key>signalfx.trace.methods</key>

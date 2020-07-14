@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/SfxApmTrainingJava/src/main/java/com/signalfx/training/SfxCurrencyConverterServerAutoJmx.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="SIGNALFX_AGENT_HOST" value="192.168.0.133"/>
+        <mapEntry key="SIGNALFX_ENDPOINT_URL" value="http://192.168.0.133:9800/v1/trace"/>
+        <mapEntry key="SIGNALFX_INGEST_URL" value="https://ingest.us1.signalfx.com"/>
+        <mapEntry key="SIGNALFX_SERVICE_NAME" value="SfxJmxTest"/>
+        <mapEntry key="SIGNALFX_TOKEN" value="WH8RxYYkZrSzyYF803n8PQ"/>
+        <mapEntry key="SIGNALFX_TRACE_METHODS" value="com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]"/>
+    </mapAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+        <listEntry value="org.eclipse.eclemma.ui.launchGroup.coverage"/>
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.signalfx.training.SfxCurrencyConverterServerAutoJmx"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="SfxApmTrainingJava"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SfxApmTrainingJava"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-javaagent:./signalfx-tracing.jar"/>
+</launchConfiguration>
