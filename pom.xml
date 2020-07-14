@@ -7,18 +7,18 @@
   <description>Code for training exercises.</description>
   
 <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.1</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
  <dependencies>
  
  <!-- https://mvnrepository.com/artifact/com.signalfx.public/signalfx-trace-api -->
@@ -77,31 +77,6 @@
     <version>0.48.0-sfx0</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/io.jaegertracing/jaeger-client
-<dependency>
-    <groupId>io.jaegertracing</groupId>
-    <artifactId>jaeger-client</artifactId>
-    <version>1.2.0</version>
-</dependency>
--->
-
-<!-- https://mvnrepository.com/artifact/io.jaegertracing/jaeger-zipkin -->
-<!-- <dependency>
-    <groupId>io.jaegertracing</groupId>
-    <artifactId>jaeger-zipkin</artifactId>
-    <version>1.2.0</version>
-</dependency>
- <dependency>
-      <groupId>io.zipkin.reporter2</groupId>
-      <artifactId>zipkin-reporter</artifactId>
-      <version>2.6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>io.zipkin.reporter2</groupId>
-      <artifactId>zipkin-sender-okhttp3</artifactId>
-      <version>2.6.0</version>
-        </dependency>
-  -->
   </dependencies>
-  
+
 </project>
