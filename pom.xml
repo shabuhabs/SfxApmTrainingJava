@@ -17,8 +17,39 @@
                 <target>1.8</target>
             </configuration>
         </plugin>
+        
+         <plugin>
+        	<groupId>org.codehaus.mojo</groupId>
+        	<artifactId>exec-maven-plugin</artifactId>
+       		<version>3.0.0</version>
+        	<executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+         
+          <arguments>
+            <argument>-javaagent:./signalfx-tracing.jar</argument>
+            <argument>-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</argument>
+            <argument>-Dsignalfx.service.name=TheNewJavaService</argument>
+          </arguments>
+ <!--  <systemProperties>
+        <systemProperty>
+              <key>signalfx.trace.methods</key>
+              <value>com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</value>
+            </systemProperty>
+           
+          </systemProperties>
+-->     
+        </configuration>
+      </plugin>
     </plugins>
 </build>
+
+
  <dependencies>
  
  <!-- https://mvnrepository.com/artifact/com.signalfx.public/signalfx-trace-api -->
