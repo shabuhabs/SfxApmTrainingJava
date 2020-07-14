@@ -22,7 +22,10 @@ How to build: ( linux )
     
     You can change your service name by modifying this Jvm Configuration file in your local cloned copy  of https://github.com/shabuhabs/SfxApmTrainingJava/blob/master/.mvn/jvm.config as follows:
     
-    Change the last parameter from -Dsignalfx.service.name=MyJavaService to -Dsignalfx.service.name=NyNewServiceName
+    Change the last parameter from 
+    -Dsignalfx.service.name=MyJavaService 
+                    to 
+    -Dsignalfx.service.name=NyNewServiceName
 
 5. Run the Example:
 
