@@ -38,7 +38,7 @@ monitors:
     port: <JMX port> # NOT RMI port, Remote JMX Port  
   - type: jmx
     host: <JMX host>
-    port: 1099 # NOT RMI port, Remote JMX Port
+    port: <JMX port> # NOT RMI port, Remote JMX Port
     groovyScript: {"#from": "/etc/signalfx/deadlockedThreads.groovy", raw: true}
 
 
