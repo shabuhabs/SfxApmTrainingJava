@@ -6,7 +6,7 @@ apiUrl: {"#from": "/etc/signalfx/api_url", default: "https://api.signalfx.com"}
 cluster: {"#from": "/etc/signalfx/cluster", optional: true}
 
 
-traceEndpointUrl: "https://ingest.<YOUR_REALM>.signalfx.com/v2/trace"
+traceEndpointUrl: "https://ingest.us1.signalfx.com/v2/trace"
 
 intervalSeconds: 10
 
@@ -34,15 +34,13 @@ monitors:
     defaultSpanTags:
       environment: TestEnvironment
   - type: collectd/genericjmx
-    host: <JMX host>
-    port: <JMX port> # NOT RMI port, Remote JMX Port  
+    host: 127.0.1.1
+    port: 1099     
   - type: jmx
-    host: <JMX host>
-    port: <JMX port> # NOT RMI port, Remote JMX Port
+    host: 127.0.1.1
+    port: 1099 # NOT RMI port, Remote JMX Port
     groovyScript: {"#from": "/etc/signalfx/deadlockedThreads.groovy", raw: true}
 
 
 writer:
   traceExportFormat: sapm
-#  logTraceSpans: true
-#  logDatapoints: true
