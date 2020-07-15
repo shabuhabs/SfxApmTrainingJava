@@ -42,18 +42,6 @@
 			<argument>com.signalfx.training.SfxCurrencyConverterServerAutoJmx</argument>	
 			
         </arguments>
-		<!--           <systemProperties>
-        	<systemProperty>
-              	  <key>signalfx.trace.methods</key>
-                  <value>com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</value>
-	  	</systemProperty>
-
-	   	<systemProperty>
-		  <key>signalfx.service.name</key>
-		  <value>MyJavaSvc</value>
-		</systemProperty>
-                
-	  </systemProperties> -->     
 	</configuration>
       </plugin>
     </plugins>
@@ -62,18 +50,7 @@
 
  <dependencies>
  
- <!-- https://mvnrepository.com/artifact/com.signalfx.public/signalfx-trace-api -->
- <!-- <dependency>
- <groupId>ch.qos.logback</groupId>
-   <artifactId>logback-classic</artifactId>
-     <version>1.1.2</version>
-     </dependency>
-     <dependency>
-	       <groupId>org.slf4j</groupId>
-	         <artifactId>log4j-over-slf4j</artifactId>
-		   <version>1.7.12</version>
-	   </dependency>
--->
+ 
 <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
