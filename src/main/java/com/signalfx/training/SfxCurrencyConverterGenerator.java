@@ -12,7 +12,7 @@ public class SfxCurrencyConverterGenerator extends SfxCurrencyConverterServer {
 	public static void main(String[] args) throws Exception {
     	
 		 Server server = new Server(8888);
-		 server.setHandler(new SfxCurrencyConverterServer());
+		 server.setHandler(new SfxCurrencyConverterServerAutoJmx());
 		 server.start();   
 		 
 		 for(int i=0; i<1000; i++) {
