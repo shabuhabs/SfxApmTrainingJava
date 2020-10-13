@@ -1,7 +1,0 @@
-*.class
-/target
-/.settings
-/.resourceCache
-.classpath
-.project
-.DS*
