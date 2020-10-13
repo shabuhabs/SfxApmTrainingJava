@@ -3,3 +3,4 @@
 /.resourceCache
 .classpath
 .DS*
+/bin

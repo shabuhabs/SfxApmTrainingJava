@@ -1,5 +1,0 @@
-*.class
-/target
-/.resourceCache
-.classpath
-.DS*
