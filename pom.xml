@@ -33,7 +33,7 @@
 		<executable>java</executable>
 		<arguments>		
          	<argument>-javaagent:./signalfx-tracing.jar</argument>
-	     	<argument>-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]</argument>
+	     	<argument>-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[*]</argument>
 			<argument>-Dsignalfx.service.name=TheNewJavaService</argument>
 
 			<argument>-classpath</argument>

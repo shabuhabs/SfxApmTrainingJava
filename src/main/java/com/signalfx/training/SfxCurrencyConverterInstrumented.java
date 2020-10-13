@@ -38,11 +38,11 @@ public class SfxCurrencyConverterInstrumented extends SfxCurrencyConverter {
 	private static final Tracer s_tracer = GlobalTracer.get();
 
  	
-    private void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
+    public void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
     	final Span span = s_tracer.buildSpan("doConversion").start();
    	    try (Scope scope = s_tracer.scopeManager().activate(span)) {
    	    	span.setTag("span.kind", "SERVER");
-   	    	span.setTag("userid","userid");
+   	    	span.setTag("userid","derekD");
    	    	 
    	    	MonetaryAmount fromAmount = Monetary.getDefaultAmountFactory().setCurrency(fromCurrency).setNumber(amount).create();
    			CurrencyConversion conversion = MonetaryConversions.getConversion(toCurrency);
@@ -57,7 +57,7 @@ public class SfxCurrencyConverterInstrumented extends SfxCurrencyConverter {
    	       span.finish();
    	    }
    }
-	protected void convertMyAmount(BigDecimal amount) {
+	public void convertMyAmount(BigDecimal amount) {
 		final Span span = s_tracer.buildSpan("convertMyAmount").start();
 		try (Scope scope = s_tracer.scopeManager().activate(span)) {
 			for (Map.Entry<String,String> from : fromMap.entrySet())  { 

@@ -32,7 +32,7 @@ import com.signalfx.tracing.api.Trace;
 public class SfxCurrencyConverterAutoSfx extends SfxCurrencyConverter {
 
 	@Trace(operationName = "doConversion")
-    private void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
+    public void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
         MonetaryAmount fromAmount = Monetary.getDefaultAmountFactory().setCurrency(fromCurrency).setNumber(amount).create();
 		CurrencyConversion conversion = MonetaryConversions.getConversion(toCurrency);
 		MonetaryAmount convertedCurrency = fromAmount.with(conversion);
@@ -44,7 +44,7 @@ public class SfxCurrencyConverterAutoSfx extends SfxCurrencyConverter {
    }
 
   @Trace(operationName = "convertMyAmount")
-   protected void convertMyAmount(BigDecimal amount) {
+   public void convertMyAmount(BigDecimal amount) {
 	   m_Results.clear();
 	  
 		for (Map.Entry<String,String> from : fromMap.entrySet())  { 

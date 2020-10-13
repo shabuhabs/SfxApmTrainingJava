@@ -56,7 +56,7 @@ public class SfxCurrencyConverter {
 	}
     
     
-    private void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
+    public void doConversion ( BigDecimal amount, String fromCurrency, String fromLocale,  String toCurrency, String toLocale) {
     	MonetaryAmount fromAmount = Monetary.getDefaultAmountFactory().setCurrency(fromCurrency).setNumber(amount).create();
 		 CurrencyConversion conversion = MonetaryConversions.getConversion(toCurrency);
 		 MonetaryAmount convertedCurrency = fromAmount.with(conversion);
@@ -67,7 +67,7 @@ public class SfxCurrencyConverter {
 		 m_Results.add( amount + " in " + fromLocale + " (" + fromCurrency + ") is equivalent to " + formatted + " in " + toLocale );	
     }
 
-    protected void convertMyAmount(BigDecimal amount) throws Exception {
+    public void convertMyAmount(BigDecimal amount) throws Exception {
     	m_Results.clear();
     	for (Map.Entry<String,String> from : fromMap.entrySet())  {
     		 
@@ -77,6 +77,7 @@ public class SfxCurrencyConverter {
     		 }
     	 }
     }
+    
     public  ArrayList<String> getResults() {
     	return m_Results;
     }

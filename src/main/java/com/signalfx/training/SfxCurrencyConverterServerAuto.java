@@ -17,6 +17,9 @@ public class SfxCurrencyConverterServerAuto extends AbstractHandler {
 	public void handle(String target, org.eclipse.jetty.server.Request baseRequest, HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 		
+		MultipleMethodTest testIt = new MultipleMethodTest();
+		testIt.display();
+		     
 		String amount = request.getParameter("amt");
 		response.setContentType("text/html;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_OK);
@@ -30,7 +33,7 @@ public class SfxCurrencyConverterServerAuto extends AbstractHandler {
 	}
 	
 	 public static void main(String[] args) throws Exception {
-	    	
+	   
 		 Server server = new Server(8888);
 	     server.setHandler(new SfxCurrencyConverterServerAuto());
 	     server.start();

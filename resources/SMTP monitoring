@@ -1,0 +1,49 @@
+from pysnmp.hlapi import *
+import requests
+import json
+import socket
+oids = [['sysStatClientBytesIn','1.3.6.1.4.1.3375.2.1.1.2.1.3'],['sysStatServerBytesIn','1.3.6.1.4.1.3375.2.1.1.2.1.10'],['sysClientsslStatTotNativeConns','1.3.6.1.4.1.3375.2.1.1.2.9.6'],['sysClientsslStatTotCompatConns','1.3.6.1.4.1.3375.2.1.1.2.9.9']]
+def gethostname():
+    return(socket.gethostname())
+def walk(host, oid):
+    global sfx_metric
+    for (errorIndication, errorStatus, errorIndex, varBinds) in nextCmd(SnmpEngine(),
+                                                                        CommunityData('public'),
+                                                                        UdpTransportTarget((host, 161)),
+                                                                        ContextData(),
+                                                                        ObjectType(ObjectIdentity(oid)),
+                                                                        lookupMib=False,
+                                                                        lexicographicMode=False):
+        if errorIndication:
+            break
+        elif errorStatus:
+            break
+        else:
+            for name, val in varBinds:
+                sfx_metric = int(val)
+# SignalFx
+endpoint = 'https://ingest.eu0.signalfx.com/v2/datapoint'
+org_access_token = 'xxxx'
+# Set headers
+headers = {
+    'Content-Type': 'application/json',
+    'X-SF-TOKEN': org_access_token
+}
+def post_data():
+    # Send POST request
+    r = requests.post(endpoint, headers=headers, json=data)
+def collect_snmp(name, oid):
+    global data
+    # Walk, prepare and post
+    walk('localhost', oid)
+    # JSON payload
+    data = {"gauge": [{
+            "metric": name,
+            "dimensions": {"snmp": "BIG-IP", "host": gethostname()},
+            "value": sfx_metric
+            }
+            ]}
+    post_data()
+if __name__ == "__main__":
+    for (name, oid) in oids:
+       collect_snmp(name, oid)

@@ -1,6 +1,5 @@
 package com.signalfx.training;
 
-import static java.lang.System.out;
 
 public class DeadLockTest {
 
@@ -20,14 +19,14 @@ public class DeadLockTest {
 
    
       public synchronized void bow(final Friend bower){
-         out.format("%s: %s has bowed to me!%n", 
+         System.out.format("%s: %s has bowed to me!%n", 
             this.name, bower.getName());
          bower.bowBack(this);
       }
 
    
       public synchronized void bowBack(final Friend bower){
-         out.format("%s: %s  has bowed back to me!%n",
+    	  System.out.format("%s: %s  has bowed back to me!%n",
             this.name, bower.getName());
       }
    }

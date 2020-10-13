@@ -16,28 +16,23 @@ How to build: ( linux )
     
 4. Set Environment Variables
 
-    #SIGNALFX_ENDPOINT_URL='http://localhost:9080/v1/trace' - only required if Agent is on another host
+    Set the following Jvm parameters:
     
-    SIGNALFX_INGEST_URL=https://ingest.YourRealm.signalfx.com
-    SIGNALFX_SERVICE_NAME=SfxCurrencyConverterInstrumented
-    SIGNALFX_TOKEN=<YourTokenHere>
+    signalfx.service.name=MyJavaService
+    
+    You can change your service name by modifying this Jvm Configuration file in your local cloned copy  of https://github.com/shabuhabs/SfxApmTrainingJava/blob/master/.mvn/jvm.config as follows:
+    
+    Change the last parameter from 
+    -Dsignalfx.service.name=MyJavaService 
+                    to 
+    -Dsignalfx.service.name=NyNewServiceName
 
 5. Run the Example:
 
-    # Run the instrumented version here:
+     # JMX + Auto-Instrumnentation of Custom Methods:
+    
+     mvn exec:java -Dexec.mainClass="com.signalfx.training.SfxCurrencyConverterServerAutoJmx"
+     
+     Then Goto:  http://localhost:8888/?amt=amountToConvert. example http://localhost:8888/?amt=100
 
-    mvn exec:java -Dexec.mainClass="com.signalfx.training.SfxCurrencyConverterInstrumented"
-
-    # Not Instrumented version.
-
-    mvn exec:java -Dexec.mainClass="com.signalfx.training.SfxCurrencyConverter"
-    
-    # Optional web server version:
-    
-    Jetty - you can run this example with a Jetty webserver.
-    
-    mvn exec:java -Dexec.mainClass="com.signalfx.training.SfxCurrencyConverterServer"
-    
-    Then Goto: http://localhost:8888/?amt=amountToConvert. example http://localhost:8888/?amt=100
-    
-    
+6. View Traces in SignalFx
