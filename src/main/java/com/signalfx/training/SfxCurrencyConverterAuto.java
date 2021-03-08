@@ -2,7 +2,9 @@ package com.signalfx.training;
 
 
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
@@ -15,6 +17,8 @@ import java.io.InputStreamReader;
  */
 
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Map;
 
 import javax.money.Monetary;
@@ -80,6 +84,7 @@ public class SfxCurrencyConverterAuto extends SfxCurrencyConverter {
         		}
         		// The sleep is here below because the Tracer object is not fully shutdown when the app exits, thus throwing exeception
         		// in production situations this will not be  the case as this is a short-lived application.
+        		  		
         		Thread.sleep(3000);  	
 	      }   
 	    } catch (Exception e) {

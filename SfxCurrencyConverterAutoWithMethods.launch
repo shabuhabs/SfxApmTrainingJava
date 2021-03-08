@@ -7,7 +7,7 @@
         <listEntry value="1"/>
     </listAttribute>
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="SIGNALFX_AGENT_HOST" value="192.168.0.112"/>
+        <mapEntry key="SIGNALFX_AGENT_HOST" value="192.168.0.110"/>
     </mapAttribute>
     <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
         <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
@@ -21,5 +21,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="SfxApmTrainingJava"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SfxApmTrainingJava"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-javaagent:./signalfx-tracing.jar&#10;-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[*];com.signalfx.training.MultipleMethodTest[*]&#10;-Dsignalfx.service.name=SfxAutoWithMethods"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-javaagent:./signalfx-tracing.jar&#13;&#10;-Dsignalfx.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[*];com.signalfx.training.MultipleMethodTest[*]&#13;&#10;-Dsignalfx.service.name=SfxAutoWithMethods"/>
 </launchConfiguration>

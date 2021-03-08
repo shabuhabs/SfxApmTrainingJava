@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/SfxApmTrainingJava/src/main/java/com/signalfx/training/SfxCurrencyConverterServerAuto.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+        <listEntry value="org.eclipse.eclemma.ui.launchGroup.coverage"/>
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.signalfx.training.SfxCurrencyConverterServerAuto"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="SfxApmTrainingJava"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SfxApmTrainingJava"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-javaagent:./splunk-otel-javaagent-all.jar&#13;&#10;-Dotel.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount]&#13;&#10;-Dotel.resource.attributes=service.name=OTCurrencyConverterSplunk&#13;&#10;-Dotel.exporter.jaeger.endpoint=http://192.168.0.110:9080/v1/trace&#13;&#10;-Dotel.propagators=tracecontext,baggage"/>
+</launchConfiguration>

@@ -1,0 +1,76 @@
+a{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverter",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverter",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterAuto",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterAuto",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterAutoSfx",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterAutoSfx",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterGenerator",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterGenerator",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterInstrumented",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterInstrumented",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterServer",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterServer",
+            "projectName": "SfxCurrencyConverter"
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterServerAuto",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterServerAuto",
+            "projectName": "SfxCurrencyConverter",
+            "vmArgs": [
+                "-javaagent:./splunk-otel-javaagent-all.jar,
+                 -Dotel.trace.methods=com.signalfx.training.SfxCurrencyConverterAuto[doConversion,convertMyAmount],
+                 -Dotel.resource.attributes=service.name=OTCurrencyConverter-vs,
+                 -Dotel.exporter.jaeger.endpoint=http://192.168.0.110:14268/api/traces"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Launch SfxCurrencyConverterServerAutoJmx",
+            "request": "launch",
+            "mainClass": "com.signalfx.training.SfxCurrencyConverterServerAutoJmx",
+            "projectName": "SfxCurrencyConverter"
+        }
+    ]
+}
